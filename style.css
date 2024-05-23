@@ -1,0 +1,64 @@
+body {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.tito {
+    color: gray;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px; /* corrigido para font-size */
+    text-align: center; /* ajustado para centralizar o texto */
+    margin: 20px 0;
+}
+
+.form {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    border-radius: 20px;
+    width: 20vw;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px; /* corrigido para font-size */
+    margin: 10vh;
+}
+
+#container {
+    display: flex;
+    flex-direction: row; /* ajustado para alinhar lado a lado */
+    flex-wrap: wrap; /* permite que as divs quebrem para uma nova linha, se necessário */
+    gap: 20px; /* adiciona espaçamento entre as divs */
+    justify-content: center;
+    align-items: center;
+}
+
+.pronto {
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    border-radius: 20px;
+    width: 10vw;
+}
+
+.botao {
+    color: lightyellow;
+    background-color: rgb(228, 152, 221);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    border: none; /* adiciona borda nula */
+    cursor: pointer; /* adiciona cursor de ponteiro */
+}
+
+.singer, .album, .musica {
+    font-family: 'Courier New', Courier, monospace;
+}

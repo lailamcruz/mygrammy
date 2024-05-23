@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cantor</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1 class="tito">Editar Vencedor do Grammy</h1>
+    <form id="editForm" class="form">
+        <label for="cantor">Cantor:</label>
+        <input type="text" id="cantor" name="cantor"><br>
+
+        <label for="album">Álbum:</label>
+        <input type="text" id="album" name="album"><br>
+
+        <label for="musica">Música:</label>
+        <input type="text" id="musica" name="musica"><br>
+
+        <button type="submit" class="botao">Salvar</button>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const index = urlParams.get("index");
+
+            if (index !== null) {
+                const lista_cantores = JSON.parse(localStorage.getItem("cantores")) || [];
+                const objeto_cantor = lista_cantores[index];
+
+                document.getElementById("cantor").value = objeto_cantor.cantor;
+                document.getElementById("album").value = objeto_cantor.album;
+                document.getElementById("musica").value = objeto_cantor.musica;
+
+                const form = document.getElementById("editForm");
+                form.addEventListener("submit", (e) => {
+                    e.preventDefault();
+
+                    objeto_cantor.cantor = document.getElementById("cantor").value;
+                    objeto_cantor.album = document.getElementById("album").value;
+                    objeto_cantor.musica = document.getElementById("musica").value;
+
+                    lista_cantores[index] = objeto_cantor;
+                    localStorage.setItem("cantores", JSON.stringify(lista_cantores));
+
+                    window.location.href = "index.html";
+                });
+            }
+        });
+    </script>
+</body>
+</html>
